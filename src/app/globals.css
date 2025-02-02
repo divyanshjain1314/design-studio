@@ -5,17 +5,117 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --qode-main-color: #8E7861;
+  --qode-header-light-color: #fff;
+  --qode-header-light-hover-color: #fff;
+  --qode-header-dark-color: #000;
+  --qode-header-dark-hover-color: #8E7861
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+a {
+  list-style: none;
+  text-decoration: none !important;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom styles to adjust the z-index of the carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
+}
+
+.carousel-indicators {
+  z-index: 11 !important;
+  /* Ensure the indicators are above other elements */
+  bottom: 10px;
+}
+
+.carousel-text {
+  z-index: 999 !important;
+}
+
+#HOME_CAROUSEL .carousel-indicators {
+  justify-content: flex-start;
+  bottom: 0%;
+}
+
+
+#page-header .qodef-header-logo-link.qodef-source--svg-path svg {
+  fill: transparent;
+  stroke: currentColor;
+}
+
+#page-header-inner.qodef-skin--light .qodef-header-logo-link.qodef-source--svg-path,
+#page-header-inner.qodef-skin--light .qodef-header-logo-link.qodef-source--textual {
+  color: var(--qode-header-light-color) !important
+}
+
+#page-header {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  height: 110px;
+  /* background-color:#000; */
+  z-index: 100
+}
+
+#page-header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.image-tint {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(7%) saturate(1370%) hue-rotate(350deg) brightness(94%) contrast(86%);
+}
+
+.image-tint:hover {
+  filter: none;
+}
+
+.article-slider-container .slick-arrow.slick-prev {
+  position: absolute !important;
+  top: -15%;
+  right: 8%;
+  left: unset;
+}
+
+.article-slider-container .slick-arrow.slick-next {
+  position: absolute !important;
+  top: -15%;
+  right: 6%;
+  left: unset;
+}
+
+.react-tel-input .form-control {
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.react-tel-input .form-control:focus {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+.react-tel-input .flag-dropdown {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none;
+
+}
+
+.react-tel-input .selected-flag .flag {
+  border: 1px solid #fff;
+  padding: 2px;
+}
+
+.contact-details-banner {
+  background-image: url("/contact-details-bg.jpg");
+  background-position: bottom;
 }
