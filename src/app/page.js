@@ -1,12 +1,11 @@
 "use client";
+import { useState } from "react";
 import Header from "../pages/Header";
 import ArticleSlider from "../pages/ArticleSlider";
 import Contact from "../pages/Contact";
-import Footer from "../pages/Footer";
 import ImageSlider from "../pages/ImageSlider";
-import SlickSlider from "../pages/SliderComponent ";
-
-import { useState } from "react";
+import Footer from "../pages/Footer.jsx";
+import HomeBanner from "../pages/HomeBanner";
 
 const ImageList = ({ imageData }) => {
   return (
@@ -149,10 +148,10 @@ export default function Home() {
       <div className="relative h-[100vh] ">
         <div className="absolute bg-[#00000094] top-0 bottom-0 left-0 right-0 z-[10]"></div>
         <div className="absolute top-0 left-0 right-0 w-full px-4">
-          <Header/>
+          <Header />
         </div>
         <div className="w-full bg-gray-300">
-          <SlickSlider />
+          <HomeBanner />
           <div className="z-20">
             <div className="absolute translate-y-[30%] top-[15%] left-14 px-5 carousel-text">
               <h2 className="text-7xl uppercase text-white z-20">
@@ -256,10 +255,8 @@ export default function Home() {
                   className="w-full object-cover h-[315px]"
                 />
                 <div className="mt-4">
-                  <h5  className="qodef-e-title entry-title">
-                    <a
-                      className="text-[#8E7861] font-[600] uppercase"
-                    >
+                  <h5 className="qodef-e-title entry-title">
+                    <a className="text-[#8E7861] font-[600] uppercase">
                       Atishay Jain
                     </a>
                   </h5>
@@ -304,14 +301,14 @@ export default function Home() {
                   className="w-full object-cover h-[315px]"
                 />
                 <div className="mt-4">
-                  <h5  className="qodef-e-title entry-title">
-                    <a
-                      className="text-[#8E7861] font-[600] uppercase"
-                    >
+                  <h5 className="qodef-e-title entry-title">
+                    <a className="text-[#8E7861] font-[600] uppercase">
                       Victoria Savano
                     </a>
                   </h5>
-                  <p className="text-[#b3b3b3]">Urbanism and spatial planning</p>
+                  <p className="text-[#b3b3b3]">
+                    Urbanism and spatial planning
+                  </p>
                   <div className="">
                     <ul className="flex gap-5 p-0 ">
                       <li className="qodef-social-icon">
@@ -426,18 +423,22 @@ export default function Home() {
       {/* ArticleSlider */}
 
       <section className="bg-[#000] py-28 ps-20">
-      <div className="ps-3 mb-12">
-        <h3 className="text-[#8E7861] uppercase text-4xl font-[600] mb-4">read insights</h3>
+        <div className="ps-3 mb-12">
+          <h3 className="text-[#8E7861] uppercase text-4xl font-[600] mb-4">
+            read insights
+          </h3>
 
-        <p className="text-[#ccc]">Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-      </div>
+          <p className="text-[#ccc]">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse.
+          </p>
+        </div>
         <ArticleSlider />
       </section>
 
       {/* Marque */}
 
       <section className="bg-[#000] text-[#8E7861] border-y border-[#8E7861] py-8">
-        <marquee behavior="scroll" direction=""  >
+        <marquee behavior="scroll" direction="">
           <div className="flex gap-3">
             <div className="flex gap-3">
               <span className="qodef-m-text-1">
