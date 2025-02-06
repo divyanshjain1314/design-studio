@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -20,7 +20,17 @@ function ImageSlider() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
-    arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplaySpeed: 1000,
+        },
+      },
+    ],
   };
   const imageUrls = [
     "/new-client-img-2.png",
@@ -34,8 +44,8 @@ function ImageSlider() {
     <div className="overflow-hidden">
       <div className="image-slider">
         <Slider {...settings}>
-        {imageUrls.map((url, index) => (
-                <div key={index} className="px-16">
+          {imageUrls.map((url, index) => (
+            <div key={index} className="px-16">
               <img
                 src={url}
                 alt={`Image ${index + 1}`}

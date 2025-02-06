@@ -23,7 +23,10 @@ const ImageList = ({ imageData }) => {
         };
 
         return (
-          <div key={items.id} className="col-span-1 cursor-pointer ">
+          <div
+            key={items.id}
+            className="col-span-2 lg:col-span-1 cursor-pointer "
+          >
             <div
               className="relative"
               onMouseEnter={handleMouseEnter}
@@ -48,7 +51,7 @@ const ImageList = ({ imageData }) => {
                       isVisible ? "hidden" : ""
                     }  transition-all delay-100 ease-in-out flex items-end`}
                   >
-                    <span className="text-3xl flex items-center gap-2 pb-5">
+                    <span className="lg:text-3xl flex items-center gap-2 pb-5">
                       {" "}
                       {items.title} &#x2192;
                     </span>
@@ -145,26 +148,29 @@ export default function Home() {
   };
   return (
     <main>
-      <div className="relative h-[100vh] ">
+      <div className="relative lg:h-[100vh] h-[50vh] ">
         <div className="absolute bg-[#00000094] top-0 bottom-0 left-0 right-0 z-[10]"></div>
         <div className="absolute top-0 left-0 right-0 w-full px-4">
           <Header />
         </div>
         <div className="w-full bg-gray-300">
           <HomeBanner />
-          <div className="z-20">
-            <div className="absolute translate-y-[30%] top-[15%] left-14 px-5 carousel-text">
-              <h2 className="text-7xl uppercase text-white z-20">
+          <div className="">
+            <div className="absolute translate-y-[70%] lg:translate-y-[30%] top-[15%] lg:left-14 lg:px-5 px-4 carousel-text">
+              <h2 className="lg:hidden lg:text-7xl text-2xl uppercase text-white">
+                Experiences & Knowledge Integrated
+              </h2>
+              <h2 className="hidden lg:block lg:text-7xl text-[14px] uppercase text-white">
                 Experiences <br /> & Knowledge <br /> Integrated
               </h2>
-              <p className="text-white w-1/2 pt-4">
+              <p className="text-white lg:w-1/2 lg:pt-4">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Reprehenderit, accusamus. Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Aliquid, iste!
               </p>
             </div>
           </div>
-          <div className="absolute translate-y-[50%] top-0 right-14 z-[12] px-5">
+          <div className="absolute translate-y-[50%] top-0 right-14 z-[12] px-5 hidden lg:block">
             <nav
               className="qodef-header-navigation"
               role="navigation"
@@ -201,9 +207,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" bg-[#000] pb-16">
+      <section className=" bg-[#000] pb-16 pt-16 lg:pt-0">
         <div className="grid grid-cols-2 gap-5">
-          <div className="flex flex-col  justify-center pl-[20%] h-full">
+          <div className="col-span-2 lg:col-span-1 flex flex-col  justify-center px-4 lg:px-0 lg:pl-[20%] h-full">
             <h3 className="text-5xl text-white uppercase mb-4">
               start with idea{" "}
             </h3>
@@ -225,7 +231,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <img
               src="/h1-img-3.png"
               className="w-full h-auto object-cover"
@@ -236,8 +242,8 @@ export default function Home() {
       </section>
 
       <section className=" bg-[#000] pb-16 px-4">
-        <div className="grid grid-cols-2 h-[435px] gap-4">
-          <div className="col-span-1">
+        <div className="grid grid-cols-2 lg:h-[435px] gap-4">
+          <div className="col-span-2 lg:col-span-1">
             <div>
               <img
                 src="/h1-img-7.jpg"
@@ -246,7 +252,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <div className="grid grid-cols-2 gap-4">
               <div className="col-span-1">
                 <img
@@ -347,12 +353,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#000] pt-5 px-5">
-        <div className="pb-28">
+      <section className="bg-[#000] lg:pt-5 pt-2 px-5 relative">
+        <div className="lg:pb-28 pb-12">
           <ImageSlider />
         </div>
-        <div className="grid grid-cols-2 p-20 gap-5 pb-44">
-          <div className="col-span-1">
+        <div className="grid grid-cols-2 lg:p-20 gap-5 pb-44">
+          <div className="col-span-2 lg:col-span-1">
             <h2 className="uppercase text-[#8E7861] text-[44px] font-[500] mb-3">
               array of services and skills
             </h2>
@@ -368,7 +374,7 @@ export default function Home() {
               Read More <span className="text-4xl">&#x2192;</span>
             </button>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             {categories.map((category, index) => (
               <div
                 key={index}
@@ -422,7 +428,7 @@ export default function Home() {
 
       {/* ArticleSlider */}
 
-      <section className="bg-[#000] py-28 ps-20">
+      <section className="bg-[#000] py-28 lg:ps-20">
         <div className="ps-3 mb-12">
           <h3 className="text-[#8E7861] uppercase text-4xl font-[600] mb-4">
             read insights

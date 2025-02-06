@@ -23,14 +23,14 @@ a {
   display: none !important;
 }
 
+.carousel-text {
+  z-index: 12 !important;
+}
+
 .carousel-indicators {
   z-index: 11 !important;
   /* Ensure the indicators are above other elements */
   bottom: 10px;
-}
-
-.carousel-text {
-  z-index: 999 !important;
 }
 
 #HOME_CAROUSEL .carousel-indicators {
@@ -57,6 +57,14 @@ a {
   height: 110px;
   /* background-color:#000; */
   z-index: 100
+}
+
+.page-header-fixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 999999 !important;
+  height: 80px !important;
 }
 
 #page-header-inner {
@@ -118,4 +126,26 @@ a {
 .contact-details-banner {
   background-image: url("/contact-details-bg.jpg");
   background-position: bottom;
+}
+
+@media screen and (max-width:600px) {
+  #HOME_CAROUSEL .carousel {
+    height: 50vh !important;
+  }
+
+  .carousel-inner {
+    height: 50vh !important;
+  }
+
+  .carousel-inner .carousel-item {
+    height: 50vh !important;
+
+  }
+
+  .article-slider-container .slick-arrow.slick-prev {
+    position: absolute !important;
+    top: -15%;
+    right: 13%;
+    left: unset;
+  }
 }

@@ -57,18 +57,18 @@ const Contact = () => {
       />
       <section className="bg-[#000] pt-28 pb-5 border-b border-[#8E7861]">
         <div className="grid grid-cols-2 gap-5">
-          <div className="col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <img
               src="/h1-img-14.png"
               alt="Contact Us"
               className="w-full object-cover"
             />
           </div>
-          <div className="col-span-1 flex justify-center flex-col">
-            <h2 className="uppercase text-[#8E7861] text-4xl font-[600] mb-4">
+          <div className="col-span-2 lg:col-span-1 flex justify-center flex-col">
+            <h2 className="uppercase text-[#8E7861] text-4xl font-[600] mb-4 px-4 lg:px-0">
               contact us
             </h2>
-            <div className="pe-20">
+            <div className="lg:pe-20 px-4 lg:px-0">
               <form onSubmit={formik.handleSubmit}>
                 <div className="grid grid-cols-2 gap-3 mb-3">
                   <div className="lg:col-span-1 col-span-2">

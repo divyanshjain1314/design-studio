@@ -1,4 +1,4 @@
-import clientPromise from '../../lib/mongodb'; // Import MongoDB connection utility
+import clientPromise from '../../lib/Mongo.client'; // Import MongoDB connection utility
 
 export default async function handler(req, res) {
   if (req.method === "GET") {

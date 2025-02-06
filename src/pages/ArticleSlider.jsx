@@ -11,6 +11,16 @@ const settings = {
   autoplay: true,
   autoplaySpeed: 1000,
   arrows: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplaySpeed: 1000,
+      },
+    },
+  ],
 };
 
 const articles = [
