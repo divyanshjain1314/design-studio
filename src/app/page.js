@@ -76,9 +76,6 @@ const ImageList = ({ imageData }) => {
 
 export default function Home() {
   const [expandedCategory, setExpandedCategory] = useState(null); // To track the expanded category
-  useEffect(() => {
-    toast.info("Toast is working!");
-  }, []);
   const imageData = [
     {
       id: 1,

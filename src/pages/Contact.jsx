@@ -35,8 +35,7 @@ const Contact = () => {
         const response = await axios.post("/api/submit-form", values);
         console.log("response", response);
         if (response.data.data) {
-          console.log("Form submitted:", response);
-          toast.success("Form submitted successfully!");
+          await toast.success("Form submitted successfully!");
           resetForm();
         } else {
           console.log("Submission failed:", response.error);

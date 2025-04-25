@@ -9,7 +9,9 @@
   --qode-header-dark-color: #000;
   --qode-header-dark-hover-color: #8E7861
 }
-
+.Toastify__toast-container {
+  z-index: 9999999;
+}
 a {
   list-style: none;
   text-decoration: none !important;
