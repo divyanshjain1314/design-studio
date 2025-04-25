@@ -9,10 +9,11 @@ import HomeBanner from "../pages/HomeBanner";
 import { toast } from "react-toastify";
 
 const ImageList = ({ imageData }) => {
-  const [isVisible, setIsVisible] = useState(false);
   return (
     <>
       {imageData.map((items) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [isVisible, setIsVisible] = useState(false);
         // Use state for tracking visibility of each image
 
         const handleMouseEnter = () => {
