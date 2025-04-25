@@ -17,7 +17,10 @@ export default function MessagesPage() {
           throw new Error("Failed to fetch messages");
         }
         const data = await res.json();
-        setMessages(data);
+        if (data.length > 0) {
+          const modifyData = data.reverse();
+          setMessages(modifyData);
+        }
         setLoading(false);
       } catch (err) {
         setError(err.message);
@@ -54,26 +57,28 @@ export default function MessagesPage() {
           <table className="min-w-full border-collapse">
             <thead>
               <tr>
-                <th className="border-b p-2 bg-[#ccc] rounded-tl rounded-bl">Full Name</th>
+                <th className="border-b p-2 bg-[#ccc] rounded-tl rounded-bl">
+                  Full Name
+                </th>
                 <th className="border-b p-2 bg-[#ccc]">Email</th>
                 <th className="border-b p-2 bg-[#ccc]">Phone</th>
                 <th className="border-b p-2 bg-[#ccc]">Address</th>
                 <th className="border-b p-2 bg-[#ccc]">Message</th>
-                <th className="border-b p-2 bg-[#ccc] rounded-tr rounded-br">Submitted At</th>
+                <th className="border-b p-2 bg-[#ccc] rounded-tr rounded-br">
+                  Submitted At
+                </th>
               </tr>
             </thead>
             <tbody>
               {messages.map((message) => (
                 <tr key={message._id} className="mb-3">
-                  <td className="border-b p-2 py-3" >{message.full_name}</td>
-                  <td className="border-b p-2 py-3" >{message.email}</td>
-                  <td className="border-b p-2 py-3" >{message.phone}</td>
-                  <td className="border-b p-2 py-3" >{message.address}</td>
-                  <td className="border-b p-2 py-3" >{message.message}</td>
-                  <td className="border-b p-2 py-3" >
-                    {moment(message.submittedAt).format(
-                      "DD-MM-YYYY / h:m A"
-                    )}
+                  <td className="border-b p-2 py-3">{message.full_name}</td>
+                  <td className="border-b p-2 py-3">{message.email}</td>
+                  <td className="border-b p-2 py-3">{message.phone}</td>
+                  <td className="border-b p-2 py-3">{message.address}</td>
+                  <td className="border-b p-2 py-3">{message.message}</td>
+                  <td className="border-b p-2 py-3">
+                    {moment(message.submittedAt).format("DD-MM-YYYY / h:m A")}
                   </td>
                 </tr>
               ))}
