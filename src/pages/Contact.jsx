@@ -6,7 +6,9 @@ import "react-phone-input-2/lib/style.css";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
   // Formik setup
   const formik = useFormik({
     initialValues: {
@@ -29,6 +31,7 @@ const Contact = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
+        setIsLoading(true);
         const response = await axios.post("/api/submit-form", values);
         console.log("response", response);
         if (response.data.data) {
@@ -40,6 +43,8 @@ const Contact = () => {
         }
       } catch (error) {
         console.error("Error submitting form:", error);
+      } finally {
+        setIsLoading(false);
       }
     },
   });
@@ -160,10 +165,11 @@ const Contact = () => {
 
                 <div className="pt-10">
                   <button
+                    disabled={isLoading}
                     type="submit"
                     className="border-[#8E7861] border text-white px-5 py-2 hover:bg-[#8E7861]"
                   >
-                    Send Message
+                    {isLoading ? "Sending..." : "Send Message"}
                   </button>
                 </div>
               </form>
