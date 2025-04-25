@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../pages/Header";
 import ArticleSlider from "../pages/ArticleSlider";
 import Contact from "../pages/Contact";
 import ImageSlider from "../pages/ImageSlider";
 import Footer from "../pages/Footer.jsx";
 import HomeBanner from "../pages/HomeBanner";
+import { toast } from "react-toastify";
 
 const ImageList = ({ imageData }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -75,6 +76,9 @@ const ImageList = ({ imageData }) => {
 
 export default function Home() {
   const [expandedCategory, setExpandedCategory] = useState(null); // To track the expanded category
+  useEffect(() => {
+    toast.info("Toast is working!");
+  }, []);
   const imageData = [
     {
       id: 1,
