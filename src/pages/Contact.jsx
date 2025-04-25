@@ -78,6 +78,7 @@ const Contact = () => {
                     value={formik.values.fullName}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
+                    autoComplete="off"
                   />
                   {formik.touched.fullName && formik.errors.fullName && (
                     <div className="text-red-500 text-sm">
@@ -94,6 +95,7 @@ const Contact = () => {
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
+                    autoComplete="off"
                   />
                   {formik.touched.email && formik.errors.email && (
                     <div className="text-red-500 text-sm">
@@ -114,6 +116,7 @@ const Contact = () => {
                     specialLabel={false} // Hide the label
                     countryCodeEditable={false} // Disable country code editing
                     className="w-full bg-transparent border-b py-[2px] focus:outline-none text-white"
+                    autoComplete="off"
                   />
                   {formik.touched.phone && formik.errors.phone && (
                     <div className="text-red-500 text-sm">
@@ -130,6 +133,7 @@ const Contact = () => {
                     value={formik.values.address}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
+                    autoComplete="off"
                   />
                   {formik.touched.address && formik.errors.address && (
                     <div className="text-red-500 text-sm">
