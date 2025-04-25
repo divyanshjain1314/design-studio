@@ -11,7 +11,7 @@
 }
 
 .Toastify__toast-container {
-  z-index: 9999999;
+  z-index: 9999999 !important;
 }
 a {
   list-style: none;
