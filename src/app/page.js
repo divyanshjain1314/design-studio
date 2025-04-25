@@ -8,11 +8,11 @@ import Footer from "../pages/Footer.jsx";
 import HomeBanner from "../pages/HomeBanner";
 
 const ImageList = ({ imageData }) => {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <>
       {imageData.map((items) => {
         // Use state for tracking visibility of each image
-        const [isVisible, setIsVisible] = useState(false);
 
         const handleMouseEnter = () => {
           setIsVisible(true); // Show text on hover
